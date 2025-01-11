@@ -78,7 +78,7 @@ def on_close():
     
     
 with open('EB_high_score.txt', 'r') as file:
-    content = file.read();
+    content = file.read()
 
 points = 0
 value = None
