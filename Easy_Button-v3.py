@@ -88,29 +88,29 @@ highScore = int(content)
 attempts = 1
 bank = 0
 
-# press = tk.Button(root, text="Wango!!", width=22, bg="light gray", command=lambda:[generate_values(), add_point()])
-# press.pack()
-# press.place(x=120, y=100)
+press = tk.Button(root, text="Wango!!", width=22, bg="light gray", command=lambda:[generate_values(), add_point()])
+press.pack()
+press.place(x=120, y=100)
 
-# reset = tk.Button(root, text="Reset", width=10, bg="light gray", command=lambda:[start_over()])
-# reset.pack()
-# reset.place(x=300, y=20)
+reset = tk.Button(root, text="Reset", width=10, bg="light gray", command=lambda:[start_over()])
+reset.pack()
+reset.place(x=300, y=20)
 
-# bank_points = tk.Button(root, text="Bank Points", width=10, bg="light gray", command=lambda:[bank_value(), high_score()])
-# bank_points.pack()
-# bank_points.place(x=300, y=60)
+bank_points = tk.Button(root, text="Bank Points", width=10, bg="light gray", command=lambda:[bank_value(), high_score()])
+bank_points.pack()
+bank_points.place(x=300, y=60)
 
-# label = tk.Label(root, text="High Score: " + content)
-# label.pack()
-# label.place(x=10, y=20)
+label = tk.Label(root, text="High Score: " + content)
+label.pack()
+label.place(x=10, y=20)
 
-# label2 = tk.Label(root, text="Attempt # 1")
-# label2.pack()
-# label2.place(x=10, y=40)
+label2 = tk.Label(root, text="Attempt # 1")
+label2.pack()
+label2.place(x=10, y=40)
 
-# label3 = tk.Label(root, text="Bank: " + str(bank))
-# label3.pack()
-# label3.place(x=10, y=60)
+label3 = tk.Label(root, text="Bank: " + str(bank))
+label3.pack()
+label3.place(x=10, y=60)
 
 if __name__ == '__main__':
     app.run(debug=True)
