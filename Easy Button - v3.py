@@ -116,5 +116,5 @@ label3.place(x=10, y=60)
 root.geometry("400x200")
 root.mainloop()
 
-atexit.register(on_close())
+atexit.register(on_close)
 
