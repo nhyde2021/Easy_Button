@@ -7,8 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 
 @app.route('/generate', methods=['POST'])
 def generate_values():
@@ -113,7 +112,7 @@ bank = 0
 # label3.pack()
 # label3.place(x=10, y=60)
 
-# root.geometry("400x200")
-# root.mainloop()
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
