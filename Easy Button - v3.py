@@ -1,5 +1,4 @@
 import tkinter as tk
-import atexit
 from random import randint
 
 root = tk.Tk()
@@ -36,8 +35,8 @@ def high_score():
     if bank >= highScore:
         highScore = bank
         label.config(text="High Score: " + str(highScore))
-        #with open("EB_high_score.txt", "w") as file:
-            #file.write(highScore)
+        with open("EB_high_score.txt", "w") as file:
+            file.write(str(highScore))
 
 def start_over():
     global points
@@ -76,8 +75,7 @@ def bank_value():
 def on_close():
     global highScore
     
-    with open("EB_high_score.txt", "w") as file:
-        file.write(str(highScore))
+    
     
 with open('EB_high_score.txt', 'r') as file:
     content = file.read();
@@ -116,5 +114,4 @@ label3.place(x=10, y=60)
 root.geometry("400x200")
 root.mainloop()
 
-atexit.register(on_close)
 
