@@ -1,8 +1,7 @@
 import tkinter as tk
 from random import randint
 
-root = tk.Tk()
-root.title("Easy Button")
+
 
 def generate_values():
     global chance
@@ -71,11 +70,19 @@ def bank_value():
     points = 0
     press.config(text="\u2620  " + str(points) + "  \u2620")
     attempts_count()
-    
-def on_close():
-    global highScore
-    
-    
+
+def open_new_window():
+    new_window = tk.Toplevel(root)
+    new_window.title("New Window")
+
+    # Add widgets to the new window here
+    label = tk.Label(new_window, text="This is a new window!")
+    label.pack(pady=20)
+
+
+
+root = tk.Tk()
+root.title("Easy Button")
     
 with open('EB_high_score.txt', 'r') as file:
     content = file.read()
@@ -98,6 +105,9 @@ reset.place(x=300, y=20)
 bank_points = tk.Button(root, text="Bank Points", width=10, bg="light gray", command=lambda:[bank_value(), high_score()])
 bank_points.pack()
 bank_points.place(x=300, y=60)
+
+leaderboard = tk.Button(root, text="Open New Window", command=open_new_window)
+leaderboard.pack(pady=20)
 
 label = tk.Label(root, text="High Score: " + content)
 label.pack()
