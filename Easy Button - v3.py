@@ -71,11 +71,11 @@ def bank_value():
     press.config(text="\u2620  " + str(points) + "  \u2620")
     attempts_count()
 
-def open_new_window():
+def openLeaderBoard():
     new_window = tk.Toplevel(root)
-    new_window.title("New Window")
+    new_window.title("Leaderboard")
+    new_window.geometry("500x500")
 
-    # Add widgets to the new window here
     label = tk.Label(new_window, text="This is a new window!")
     label.pack(pady=20)
 
@@ -106,7 +106,7 @@ bank_points = tk.Button(root, text="Bank Points", width=10, bg="light gray", com
 bank_points.pack()
 bank_points.place(x=300, y=60)
 
-leaderboard = tk.Button(root, text="Open New Window", command=open_new_window)
+leaderboard = tk.Button(root, text="Leaderboard", bg="light gray" command=openLeaderBoard)
 leaderboard.pack(pady=20)
 
 label = tk.Label(root, text="High Score: " + content)
