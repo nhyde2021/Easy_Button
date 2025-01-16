@@ -76,16 +76,17 @@ def openLeaderBoard():
     new_window.title("Leaderboard")
     new_window.geometry("500x500")
 
-    label = tk.Label(new_window, text="This is a new window!")
+    label = tk.Label(new_window, text=content2[1][0])
     label.pack(pady=20)
-
-
 
 root = tk.Tk()
 root.title("Easy Button")
     
 with open('EB_high_score.txt', 'r') as file:
     content = file.read()
+
+with open('Leaderboard.csv', 'r') as file:
+    content2 = file.read()
 
 points = 0
 value = None
@@ -106,7 +107,7 @@ bank_points = tk.Button(root, text="Bank Points", width=10, bg="light gray", com
 bank_points.pack()
 bank_points.place(x=300, y=60)
 
-leaderboard = tk.Button(root, text="Leaderboard", bg="light gray" command=openLeaderBoard)
+leaderboard = tk.Button(root, text="Leaderboard", bg="light gray", command=openLeaderBoard)
 leaderboard.pack(pady=20)
 
 label = tk.Label(root, text="High Score: " + content)
