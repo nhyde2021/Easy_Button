@@ -77,6 +77,18 @@ def openLeaderBoard():
     new_window.title("Leaderboard")
     new_window.geometry("500x500")
 
+    with open('Leaderboard.csv', 'r') as file:
+        csv_reader = csv.reader(file)
+        content2 = ""
+        row_count = 0
+
+        if row_count == 0:
+            next(csv_reader)
+            row_count += 1
+            
+        for row in csv_reader:
+            content2 += row[0] + " - " + row[1] + " - " + row[2] + "\n"
+
     label = tk.Label(new_window, text=content2)
     label.pack(pady=20)
 
@@ -86,17 +98,7 @@ root.title("Easy Button")
 with open('EB_high_score.txt', 'r') as file:
     content = file.read()
 
-with open('Leaderboard.csv', 'r') as file:
-    csv_reader = csv.reader(file)
-    content2 = ""
-    row_count = 0
 
-    if row_count == 0:
-        next(csv_reader)
-        row_count += 1
-        
-    for row in csv_reader:
-        content2 += row[0] + " - " + row[1] + " - " + row[2] + "\n"
 
 points = 0
 value = None
