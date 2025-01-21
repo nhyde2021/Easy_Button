@@ -35,6 +35,7 @@ def high_score():
     if bank >= highScore:
         highScore = bank
         label.config(text="High Score: " + str(highScore))
+
         with open("EB_high_score.txt", "w") as file:
             file.write(str(highScore))
 
@@ -78,16 +79,12 @@ def openLeaderBoard():
     new_window.geometry("500x500")
 
     with open('Leaderboard.csv', 'r') as file:
+        next(file)
         csv_reader = csv.reader(file)
         content2 = ""
-        row_count = 0
-
-        if row_count == 0:
-            next(csv_reader)
-            row_count += 1
             
         for row in csv_reader:
-            content2 += row[0] + " - " + row[1] + " - " + row[2] + "\n"
+            content2 += row[0] + ". " + row[1] + " - " + row[2] + "\n" 
 
     label = tk.Label(new_window, text=content2)
     label.pack(pady=20)
